@@ -51,7 +51,7 @@ public:
         if (fn_createCaptureCamera_)
         {
             Ptr<IVideoCapture> cap = fn_createCaptureCamera_(camera);
-            if (cap && !params.empty())
+            if (cap && cap->isOpened() && !params.empty())
             {
                 applyParametersFallback(cap, params);
             }
